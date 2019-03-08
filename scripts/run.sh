@@ -13,4 +13,4 @@ if [ "$SLACK_TOKEN" == "NULL" ]; then
 fi
 
 echo "SLACK_TOKEN: $SLACK_TOKEN" >> /app/rtmbot.conf
-./rtmbot.py
+rtmbot

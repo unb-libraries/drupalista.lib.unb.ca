@@ -109,17 +109,18 @@ class Drupalista(object):
     def uli(self):
         uri = self.strip_formatting(self.command_data[2])
         pod_id, pod_env = self.get_pod_id(uri)
-
         if not pod_id == False:
             cmd = self.kube_command + [
                 'exec',
                 pod_id,
                 '--namespace=' + pod_env,
                 '--',
-                '/usr/bin/drush',
-                '--root=/app/html',
-                'uli'
+                '/scripts/drupalUli.sh'
             ]
+            try:
+                cmd.append(self.strip_formatting(self.command_data[3]))
+            except Exception:
+                pass
             cmd.remove('--selector=app=drupal')
             self.output += '```' + subprocess.check_output(cmd, stderr=subprocess.STDOUT).replace('http://default', 'http://' + uri) + '```'
         else:

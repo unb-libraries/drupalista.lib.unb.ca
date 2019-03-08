@@ -1,11 +1,7 @@
 """rtmbot plugin for slack; does drupaling.
 
-Listen for mentions of Hodor's name in channels and reply with a message.
-Messages are pre-defined from a basic module import and classified by mood.
-The 'mood' of reply is determined by comparing the content of the triggering
-message against a library of words and human interpreted intent scoring. After
-mood assignment, a message is chosen based on a dropo-type selection process
-that allows for weighting of responses."""
+Listen for mentions of Drupalista's name in channels and act on the commands in
+kubernetes-deployed Drupal 8 instances."""
 
 from __future__ import print_function
 from __future__ import unicode_literals

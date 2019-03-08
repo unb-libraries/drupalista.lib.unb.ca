@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
-
 if [ "$SLACK_TOKEN" == "NULL" ]; then
   echo "The SLACK_TOKEN environment variable is not set!"
   exit 1

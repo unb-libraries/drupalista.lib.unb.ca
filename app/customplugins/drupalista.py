@@ -15,7 +15,7 @@ class DrupalistaPlugin(Plugin):
     def process_message(self, data):
         if 'text' in data.keys():
             logger = self.get_logger()
-            logging.info("{}".format(data))
+            logger.info("{}".format(data))
             config_path = '/app/customplugins/drupalista.json'
             config = json.loads(open(config_path).read())
             if self.should_respond(data, config):

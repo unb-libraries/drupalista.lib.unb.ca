@@ -14,7 +14,8 @@ class DrupalistaPlugin(Plugin):
 
     def process_message(self, data):
         if 'text' in data.keys():
-            logging.info("Message {}".format(data))
+            logger = self.get_logger()
+            logging.info("{}".format(data))
             config_path = '/app/customplugins/drupalista.json'
             config = json.loads(open(config_path).read())
             if self.should_respond(data, config):
@@ -27,3 +28,13 @@ class DrupalistaPlugin(Plugin):
             if response_string in data['text'].lower() and data['user'].upper() in config['authorization']['users']:
                 return True
         return False
+
+    def get_logger(self):
+        logger = logging.getLogger('simple_example')
+        logger.setLevel(logging.INFO)
+        ch = logging.StreamHandler()
+        ch.setLevel(logging.INFO)
+        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+        ch.setFormatter(formatter)
+        logger.addHandler(ch)
+        return logger

@@ -8,12 +8,13 @@ from __future__ import unicode_literals
 from rtmbot.core import Plugin
 from Drupalista.Drupalista import Drupalista
 import json
+import logging
 
 class DrupalistaPlugin(Plugin):
 
     def process_message(self, data):
         if 'text' in data.keys():
-            print(data)
+            logging.info("Message {}".format(data))
             config_path = '/app/customplugins/drupalista.json'
             config = json.loads(open(config_path).read())
             if self.should_respond(data, config):

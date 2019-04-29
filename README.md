@@ -9,9 +9,10 @@ Interact with CargoDock deployed Kubernetes hosted Drupal containers via Slack.
  * ```SLACK_TOKEN``` : The slack token used to connect drupalista to your slack instance.
  * ```KUBE_NODE``` : The IP or hostname of the kubernetes API node.
  * ```KUBE_NODE_PORT``` : The port of the kubernetes node to use for API access.
- * ```KUBE_ADMIN_CA_KEY``` : The admin CA to assert to the kube client API.
- * ```KUBE_ADMIN_ADMIN_PEM``` : The admin cert to assert to the kube client API.
- * ```KUBE_ADMIN_CA_KEY``` : The admin cert key to assert to the kube client API.
+ * ```KUBE_NODE_CA_KEY``` : The admin CA to assert to the kube client API.
+ * ```KUBE_CLUSTER_ID``` : The cluster ID to use for context.
+ * ```KUBE_SERVICE_ACCOUNT``` : The service account to use when accessing the cluster
+ * ```KUBE_BEARER_TOKEN``` : The bearer token issued to the service account.
 
 ## Commands
  * ```list_sites``` : List instances controllable by Drupalista.

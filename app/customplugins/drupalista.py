@@ -30,7 +30,7 @@ class DrupalistaPlugin(Plugin):
         return False
 
     def get_logger(self):
-        logger = logging.getLogger('simple_example')
+        logger = logging.getLogger('drupalista')
         logger.setLevel(logging.INFO)
         ch = logging.StreamHandler()
         ch.setLevel(logging.INFO)

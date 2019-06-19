@@ -68,7 +68,7 @@ class Drupalista(object):
             'pods',
             '--all-namespaces',
             '-o',
-            'jsonpath={range .items[*]}131.202.94.72     {.metadata.labels.uri}\n{end}'
+            'jsonpath={range .items[*]}131.202.38.13     {.metadata.labels.uri}\n{end}'
         ]
         self.output += "```# Start Drupalista Host File List #\n"
         self.output += subprocess.check_output(cmd)
